@@ -2,6 +2,7 @@
   - name: Install nginx
     hosts: webserver
     become: true
+    user: user-ansible
   
     tasks:
     - name: Add epel-release repo
