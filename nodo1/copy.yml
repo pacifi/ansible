@@ -1,0 +1,11 @@
+---
+    - name: Install nginx
+      hosts: webserver
+      become: true
+    
+    - copy:
+      src: ../cerificates
+      dest: /root/
+      owner: user-ansible
+      group: user-ansible
+      mode: 0644
