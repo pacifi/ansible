@@ -1,0 +1,10 @@
+{
+    "ansible.fileCopyConfig": [
+        {
+            "server": "192.168.1.100",
+            "sourcePath": "/home/pacifi/ansible/",
+            "targetPath": "NotShowThisAgain",
+            "copyOnSave": true
+        }
+    ]
+}
