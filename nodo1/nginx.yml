@@ -1,8 +1,7 @@
 ---
   - name: Install nginx
-    hosts: webserver
+    hosts: host.name.ip
     become: true
-    user: user-ansible
   
     tasks:
     - name: Add epel-release repo
@@ -15,7 +14,12 @@
         name: nginx
         state: present
   
+    - name: Insert Index Page
+      template:
+        src: index.html
+        dest: /usr/share/nginx/html/index.html
+  
     - name: Start NGiNX
       systemctl:
         name: nginx
-        state: enable
+        state: starte
