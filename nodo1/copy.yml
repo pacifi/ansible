@@ -2,8 +2,8 @@
     - name: Install nginx
       hosts: webserver
       become: true
-    
-    - synchronize:
+      
+      copy:
       src: ../cerificates
       dest: /root/
       owner: user-ansible
