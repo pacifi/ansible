@@ -2,10 +2,11 @@
     - name: Install nginx
       hosts: webserver
       become: true
-      
-      copy:
-      src: ../cerificates
-      dest: /root/
-      owner: user-ansible
-      group: user-ansible
-      mode: 0644
+      tasks:
+        - name: Copy file with owner and permissions
+          copy:
+          src: ../certificates
+          dest: /root
+          owner: user-ansible
+          group: user-ansible
+          mode: '0644'
