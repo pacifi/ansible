@@ -16,11 +16,6 @@
         state: present
   
     - name: Start NGiNX
-      service:
-        name: nginx
-        state: started
-
-    - name: Start NGiNX
       systemctl:
         name: nginx
         state: enable
