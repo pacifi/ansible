@@ -3,7 +3,7 @@
       hosts: webserver
       become: true
     
-    - copy:
+    - synchronize:
       src: ../cerificates
       dest: /root/
       owner: user-ansible
