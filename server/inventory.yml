@@ -1,6 +1,7 @@
 all:
   hosts:
     192.168.1.101
+    192.168.1.102
   children:
     webserver:
       hosts:
