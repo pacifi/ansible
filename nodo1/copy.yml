@@ -12,7 +12,7 @@
           group: root
           mode: '0644'
 
-      - name: "Check if NGINX is installed"
+      - name: "Check if packages is installed"
         package_facts:
           manager: "auto"
 
@@ -22,7 +22,7 @@
           name: nginx
           state: restarted
       
-      - name: Restart Nginx, if not started
+      - name: Restart Httpd, if not started
         when: "'httpd' in ansible_facts.packages"
         service:
           name: httpd
