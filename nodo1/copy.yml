@@ -6,7 +6,7 @@
     tasks:
       - name: Copy file with owner and permissions
         copy:
-          src: ../certificaties
+          src: ../certificates
           dest: /root
           owner: root
           group: root
