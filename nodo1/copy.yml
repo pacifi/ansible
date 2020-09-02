@@ -14,11 +14,11 @@
 
       - name: "Check if NGINX is installed"
         package_facts:
-        manager: "auto"
-
+          manager: "auto"
 
       - name: Restart Nginx, if not started
         when: "'nginx' in ansible_facts.packages"
         service:
           name: nginx
           state: restarted
+      
