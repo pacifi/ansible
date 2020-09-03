@@ -9,24 +9,24 @@
   tasks:
     - ping: ~
 
-    - name: Update APT package manager repositories cache
+    - name: Update yum package manager repositories cache
       become: true
-      apt:
+      yum:
         update_cache: yes
 
     - name: Upgrade installed packages
       become: true
-      apt:
+      yum:
         upgrade: safe
 
     - name: Install cowsay - it's probably important
       become: true
-      apt:
+      yum:
         name: cowsay
 
     - name: Install low-level utilities
       become: true
-      apt:
+      yum:
         name: "{{ item }}"
       with_items:
         - zip
@@ -34,13 +34,13 @@
 
     - name: Install Git VCS
       become: true
-      apt:
+      yum:
         name: git
         state: latest
 
     - name: Install Nginx web server
       become: true
-      apt:
+      yum:
         name: nginx
         state: latest
 
@@ -66,18 +66,18 @@
 
     - name: Install MySQL DB server
       become: true
-      apt:
+      yum:
         name: mysql-server
         state: latest
 
     - name: Add PHP 7 PPA repository
       become: true
-      apt_repository:
+      yum_repository:
         repo: 'ppa:ondrej/php'
 
     - name: Install PHP packages
       become: true
-      apt:
+      yum:
         name: "{{ item }}"
         state: latest
       with_items:
