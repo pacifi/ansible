@@ -16,7 +16,7 @@
 
     - name: Upgrade installed packages
       become: true
-      yum:
+      dnf:
         upgrade: safe
 
     - name: Install cowsay - it's probably important
