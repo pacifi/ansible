@@ -39,6 +39,17 @@
         name: nginx
         state: latest
 
+    - name: Creates directory
+      file:
+        path: /etc/nginx/sites-available/
+        state: directory
+    
+    - name: Creates directory
+      file:
+        path: /etc/nginx/sites-enabled/
+        state: directory
+  
+
     - name: Add Symfony config template to the Nginx available sites
       become: true
       template:
