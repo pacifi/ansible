@@ -40,11 +40,13 @@
         state: latest
 
     - name: Creates directory
+      become: yes
       file:
         path: /etc/nginx/sites-available/
         state: directory
     
     - name: Creates directory
+      become: yes
       file:
         path: /etc/nginx/sites-enabled/
         state: directory
