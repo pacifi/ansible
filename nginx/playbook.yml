@@ -14,11 +14,6 @@
       yum:
         update_cache: yes
 
-    - name: Upgrade installed packages
-      become: true
-      dnf:
-        upgrade: safe
-
     - name: Install cowsay - it's probably important
       become: true
       yum:
