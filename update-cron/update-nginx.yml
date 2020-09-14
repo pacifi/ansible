@@ -1,0 +1,11 @@
+- hosts: all
+
+  tasks:
+    - name: Remove hosts 
+      file: 
+        path: /etc/nginx/sites_enabled/html1.conf
+        state: absent
+    
+    - name: Create virtualhost
+      file: src=/etc/nginx/sites_available/html1.conf dest=/etc/nginx/sites_enabled/html1.conf
+      notify: nginx reload
