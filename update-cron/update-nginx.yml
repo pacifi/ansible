@@ -1,11 +1,10 @@
 - hosts: all
 
   tasks:
-    - replace: 
-        sudo: yes
+    - lineinfile: 
         path: /etc/nginx/sites_available/html1.conf
         regexp: '/usr/share/nginx/html/html1'
-        replace: '/usr/share/nginx/html/html2'
+        line: '/usr/share/nginx/html/html2'
     
     - name: "Check if packages is installed"
       package_facts:
