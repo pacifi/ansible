@@ -13,7 +13,6 @@
 
     - name: Restart Nginx, if not started
       when: "'nginx' in ansible_facts.packages"
-      
       service:
         name: nginx
         state: restarted
