@@ -9,6 +9,8 @@
         state: absent
 
     - file:
+        become: true
+        become_method: sudo
         src: /etc/nginx/sites-available/html2.conf
         dest: /etc/nginx/sites-enabled/html2.conf
         owner: root
