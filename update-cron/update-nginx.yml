@@ -13,7 +13,8 @@
 
     - name: Restart Nginx, if not started
       when: "'nginx' in ansible_facts.packages"
-      sudo: yes
+      become: true
+      become_method: sudo
       service:
         name: nginx
         state: restarted
