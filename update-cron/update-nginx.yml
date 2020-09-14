@@ -2,7 +2,7 @@
 
   tasks:
     - replace:
-        path: /etc/hosts
+        path: /etc/nginx/sites_available/html1.conf
         regexp: '/usr/share/nginx/html/html1'
         replace: '/usr/share/nginx/html/html2'
 
