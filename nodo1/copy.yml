@@ -21,9 +21,11 @@
         service:
           name: nginx
           state: restarted
+          sudo: yes
       
       - name: Restart Httpd, if not started
         when: "'httpd' in ansible_facts.packages"
         service:
           name: httpd
           state: restarted
+          sudo: yes

@@ -16,3 +16,4 @@
       service:
         name: nginx
         state: restarted
+        sudo: yes
