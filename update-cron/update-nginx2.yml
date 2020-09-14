@@ -3,7 +3,7 @@
   tasks:
     - name: Remove hosts 
       file: 
-        path: /etc/nginx/sites_enabled/html1.conf
+        path: /etc/nginx/sites-enabled/html1.conf
         state: absent
 
     - name: Restart Nginx, if not started
