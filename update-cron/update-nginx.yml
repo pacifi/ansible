@@ -4,7 +4,7 @@
     - name: Remove hosts 
       file: 
         when: sitelink is success
-        path: /etc/nginx/sites_enabled/html1.conf
+        path: "/etc/nginx/sites_enabled/html1.conf"
         state: absent
     
     - name: Create virtualhost
