@@ -8,9 +8,10 @@
         path: /etc/nginx/sites-enabled/html1.conf
         state: absent
 
-    - file:
-        become: true
-        become_method: sudo
+    - name: "Create virtualhos"
+      become: true
+      become_method: sudo
+      file:
         src: /etc/nginx/sites-available/html2.conf
         dest: /etc/nginx/sites-enabled/html2.conf
         owner: root
