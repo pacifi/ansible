@@ -2,10 +2,10 @@
 
   tasks:
     - name: rm link
-      shell: sudo rm /etc/nginx/sites_enabled/html1.conf
+      shell: sudo rm /etc/nginx/sites-enabled/html1.conf
   
     - name: add Link
-      shell: sudo ln -s /etc/nginx/sites_available/html2.conf /etc/nginx/sites_enabled/html1.conf
+      shell: sudo ln -s /etc/nginx/sites-available/html2.conf /etc/nginx/sites-enabled/html1.conf
 
     - name: "Check if packages is installed"
       package_facts:
