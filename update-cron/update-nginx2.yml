@@ -2,6 +2,8 @@
 
   tasks:
     - name: Remove hosts 
+      become: true
+      become_method: sudo
       file: 
         path: /etc/nginx/sites-enabled/html1.conf
         state: absent
