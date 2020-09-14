@@ -5,11 +5,11 @@
       shell: sudo rm /etc/nginx/sites_enabled/html1.conf
   
     - name: add Link
-      shell: sudo ln -s /etc/nginx/sites_available/html2.conf /etc/nginx/sites_enabled/
+      shell: sudo ln -s /etc/nginx/sites_available/html2.conf /etc/nginx/sites_enabled/html1.conf
 
     - name: "Check if packages is installed"
       package_facts:
-      manager: "auto"
+        manager: "auto"
 
     - name: Restart Nginx, if not started
       when: "'nginx' in ansible_facts.packages"
