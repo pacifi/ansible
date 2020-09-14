@@ -8,6 +8,13 @@
         path: /etc/nginx/sites-enabled/html1.conf
         state: absent
 
+    - file:
+        src: /etc/nginx/sites-available/html2.conf
+        dest: /etc/nginx/sites-enabled/html2.conf
+        owner: root
+        group: root
+        state: link
+
     - name: Restart Nginx, if not started
       become: true
       become_method: sudo
