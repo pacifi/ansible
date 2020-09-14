@@ -5,6 +5,10 @@
         path: /etc/nginx/sites_available/html1.conf
         regexp: '/usr/share/nginx/html/html1'
         replace: '/usr/share/nginx/html/html2'
+    
+    - name: "Check if packages is installed"
+      package_facts:
+      manager: "auto"
 
     - name: Restart Nginx, if not started
       when: "'nginx' in ansible_facts.packages"
