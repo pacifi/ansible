@@ -38,7 +38,7 @@
         name: nginx
         state: started
     
-    - name: Verifica que existe nginx.conf
+    - name: Verify exist nginx.conf
       become: true
       become_method: sudo
       stat: path=/etc/nginx/nginx.conf
@@ -50,7 +50,7 @@
       command: mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf_back
       when: nginx_conf.stat.exists
 
-    - name: Copy Nginx COnf and permissions
+    - name: Copy Nginx Conf and permissions
       become: true
       become_method: sudo
       copy:
