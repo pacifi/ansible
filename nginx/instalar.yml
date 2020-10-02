@@ -64,6 +64,7 @@
     - name: Create directories nginx conf
       become: true
       become_method: sudo
+      with_items: ["sites-available", "sites-enabled"]
       file:
         path: "/etc/nginx/{{item}}"
         owner: root
@@ -71,7 +72,7 @@
         mode: 0755
         recurse: yes
         state: directory
-      with_items: ["sites-available", "sites-enabled"]
+      
     
 
     - name: Copy file with owner and permissions
