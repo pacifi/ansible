@@ -2,16 +2,22 @@
 - hosts: all
   tasks:
     - name: Add epel-release repo
+      become: true    
+      become_method: sudo
       yum:
         name: epel-release
         state: present
     
     - name: Install nginx
+      become: true
+      become_method: sudo
       yum:
         name: nginx
         state: present
 
     - name: Create directories nginx conf
+      become: true
+      become_method: sudo
       file:
         path: "/etc/nginx/{{item}}"
         owner: root
@@ -23,6 +29,8 @@
     
 
     - name: Copy file with owner and permissions
+      become: true
+      become_method: sudo
       copy:
         src: /root/upeu-ssl
         dest: /root/tls
