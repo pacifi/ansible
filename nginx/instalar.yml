@@ -1,13 +1,31 @@
----
-  - hosts: all
-    tasks:
-      - name: Add epel-release repo
-        yum:
-          name: epel-release
-          state: present
-      
-      - name: Install nginx
-        yum:
-          name: nginx
-          state: present
+
+- hosts: all
+  tasks:
+    - name: Add epel-release repo
+      yum:
+        name: epel-release
+        state: present
     
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Create directory sites-available
+      file:
+        path: /etc/nginx/sites-available
+        state: directory
+
+    - name: Create directory sites-enabled
+      file:
+        path: /etc/nginx/sites-enabled
+        state: directory
+    
+
+    - name: Copy file with owner and permissions
+      copy:
+        src: /root/upeu-ssl
+        dest: /etc/pki/tls/
+        owner: root
+        group: root
+        mode: '0644'
