@@ -11,21 +11,21 @@
         name: nginx
         state: present
 
-    - name: Create directory sites-available
+    - name: Create directories nginx conf
       file:
-        path: /etc/nginx/sites-available
+        path: "/etc/nginx/{{item}}"
+        owner: root
+        group: root
+        mode: 0755
+        recurse: yes
         state: directory
-
-    - name: Create directory sites-enabled
-      file:
-        path: /etc/nginx/sites-enabled
-        state: directory
+      with_items: ["sites-available", "sites-enabled"]
     
 
     - name: Copy file with owner and permissions
       copy:
         src: /root/upeu-ssl
-        dest: /etc/pki/tls/
+        dest: /root/tls
         owner: root
         group: root
         mode: '0644'
