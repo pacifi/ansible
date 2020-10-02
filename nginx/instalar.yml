@@ -47,7 +47,7 @@
     - name: Save Nignx Conf
       become: true
       become_method: sudo
-      command: mv /etc/nginx/nginx.conf etc/nginx/nginx.conf_back
+      command: mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf_back
       when: nginx_conf.stat.exists
 
     - name: Copy Nginx COnf and permissions
