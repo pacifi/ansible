@@ -1,0 +1,36 @@
+- hosts: all
+
+  tasks:
+    - name: Copy file with owner and permissions
+      become: true
+      become_method: sudo
+      copy:
+        src: /root/upeu-ssl2020
+        dest: /root/tls
+        owner: root
+        group: root
+        mode: '0644'
+    
+    - name: Copy file with owner and permissions
+      become: true
+      become_method: sudo
+      copy:
+        src: /root/upeu-ssl2021
+        dest: /root/tls
+        owner: root
+        group: root
+        mode: '0644'
+  
+    
+    - name: "Check if packages is installed"
+      package_facts:
+        manager: "auto"
+
+    - name: Restart Nginx, if not started
+      when: "'nginx' in ansible_facts.packages"
+      become: true
+      become_method: sudo
+      service:
+        name: nginx
+        state: restarted
+        
