@@ -28,8 +28,8 @@
       register: virtualhost
 
     - name: Replace Text
-      replace: dest={{item}} regexp='/root/tls/upeu-ssl2020/' replace='/root/tls/upeu-ssl2021/'
-      with_items: "{{ virtualhost.stdout_lines }}"
+      replace: dest={{item.path}} regexp='/root/tls/upeu-ssl2020/' replace='/root/tls/upeu-ssl2021/'
+      with_items: "{{ virtualhost.files }}"
 
 
     - name: "Check if packages is installed"
