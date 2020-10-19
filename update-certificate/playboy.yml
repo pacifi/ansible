@@ -30,7 +30,7 @@
     - name: Replace Text
       become: true
       become_method: sudo
-      replace: dest={{item.path}} regexp='/root/tls/upeu-ssl2020/' replace='/root/tls/upeu-ssl2021/'
+      replace: dest={{item.path}} regexp='/root/tls/upeu-ssl2021/' replace='/root/tls/upeu-ssl2020/'
       with_items: "{{ virtualhost.files }}"
 
 
