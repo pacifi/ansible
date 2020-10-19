@@ -21,13 +21,12 @@
         group: root
         mode: '0644'
 
-    tasks:
-      - name: Find all of the files inside this directory
-        find:
-          paths: "/etc/nginx/sites-available/"
-          patterns: *.conf"
-        register: repos
-    
+    - name: Find all of the files inside this directory
+      find:
+        paths: "/etc/yum.repos.d/"
+        patterns: "*.repo"
+      register: repos
+
     - name: Before Ansible 2.3, option 'dest', 'destfile' or 'name' was used instead of 'path'
       replace:
           path: "{{ item.path }}"
