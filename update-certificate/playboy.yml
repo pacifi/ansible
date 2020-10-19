@@ -24,7 +24,7 @@
     
     - name: Before Ansible 2.3, option 'dest', 'destfile' or 'name' was used instead of 'path'
       replace:
-          path: /etc/nginx/sites-available
+          path: /etc/nginx/sites-available/*.conf
           regexp: '^/root/tls/upeu-ssl2020/'
           replace: '/root/tls/upeu-ssl2021/'
 
