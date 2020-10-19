@@ -28,7 +28,7 @@
       register: virtualhost
 
     - name: Replace Text
-      replace: dest={{virtualhost}} regexp='/root/tls/upeu-ssl2020/' replace='/root/tls/upeu-ssl2021/'
+      replace: dest={{item}} regexp='/root/tls/upeu-ssl2020/' replace='/root/tls/upeu-ssl2021/'
       with_items: "{{ virtualhost.stdout_lines }}"
 
 
