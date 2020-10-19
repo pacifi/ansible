@@ -23,7 +23,7 @@
 
     - name: Find all of the files inside this directory
       find:
-        paths: "/etc/yum.repos.d/"
+        paths: "/etc/nginx/sites-available/"
         patterns: "*.repo"
       register: repos
 
